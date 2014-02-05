@@ -1,0 +1,543 @@
+[
+  {
+    "id": "01",
+    "name": "南部せんべい巖手屋 盛岡フェザン店",
+    "summary": "南部せんべい巖手屋の盛岡フェザン店です。",
+    "open": "10:00~22:00",
+    "address": "岩手県盛岡市盛岡駅前通1-44",
+    "phone": "019-654-7160",
+    "url": "http://www.iwateya.co.jp/",
+    "location": [
+      {
+        "lat": "39.702608",
+        "long": "141.135644"
+      }
+    ],
+    "item": [
+      {
+        "name": "生南部サブレ",
+        "summary": "落花生せんべいのクラッシュしたものを、ピュアチョコレートでコーティングした、チョコクランチです",
+        "url": "http://www.iwateya.co.jp/img/3070.jpg",
+        "category": "お菓子",
+        "target": [
+          "junior",
+          "young",
+          "woman"
+        ],
+        "price": "630"
+      },
+      {
+        "name": "チョコ南部",
+        "summary": "しっとりしたやわらかなサブレ風生地と、ほんのり甘いチョコクリームの、洋のおせんべいです。",
+        "url": "http://www.iwateya.co.jp/img/7002.jpg",
+        "category": "お菓子",
+        "target": [
+          "junior",
+          "young",
+          "woman",
+	  "winter"
+        ],
+        "price": "525"
+      },
+      {
+        "name": "納豆せんべい",
+        "summary": "ほんのりしょうゆ風味に味付けしたフリーズドライの納豆をびっしりとのせました。納豆好きも満足の一枚です。",
+        "url": "http://www.iwateya.co.jp/img/1594.jpg",
+        "category": "お菓子",
+        "target": [
+          "adult"
+        ],
+        "price": "368"
+      },
+      {
+        "name": "いかせんべい",
+        "summary": "甘辛おつまみ系　巖手屋人気No.2巖手屋自慢のおせんべい。かるく焼いたごませんべいにきれいな三陸の海で育ったおいしいいかをさきいかにして、たっぷりのせた、やわらかくて美味しいいかせんべいです。",
+        "url": "http://www.iwateya.co.jp/img/1587.jpg",
+        "category": "お菓子",
+        "target": [
+          "adult"
+        ],
+        "price": "525"
+      }
+    ]
+  },
+  {
+    "id": "02",
+    "name": "岩鋳鉄器館",
+    "summary": "南部鉄器の一貫生産メーカです",
+    "open": "08:30~17:30",
+    "address": "岩手県盛岡市南仙北２丁目２３－９",
+    "phone": "019-635-2505",
+    "url": "http://iwachu.co.jp/museum",
+    "location": [
+      {
+        "lat": "39.67129",
+        "long": "141.153685"
+      }
+    ],
+    "item": [
+      {
+        "name": "鉄瓶平底撫肩アラレ（大）（黒）清茂作",
+        "summary": "ツルと本体を「座付」でしっかりと固定し、重厚感のある鉄瓶。",
+        "url": "http://www.iwachu.info/shop/item/iwachu/picture/goods/51_1.jpg",
+        "category": "南部鉄器",
+        "target": [
+          "adult"
+        ],
+        "price": "57,750"
+      },
+      {
+        "name": "鉄瓶９型姥口アラレ（黒）清末作",
+        "summary": "小振りの鉄瓶。茶釜のふとん釜型で可愛らしさを表現。",
+        "url": "http://www.iwachu.info/shop/item/iwachu/picture/goods/48_1.jpg",
+        "category": "南部鉄器",
+        "target": [
+          "adult"
+        ],
+        "price": "29,400"
+      },
+      {
+        "name": "レタースタンドネコ",
+        "summary": "壁掛にも御利用頂けます。愛猫家さんに人気。",
+        "url": "http://www.iwachu.info/shop/item/iwachu/picture/goods/72_1.jpg",
+        "category": "南部鉄器",
+        "target": [
+          "woman",
+          "junior"
+        ],
+        "price": "2,625"
+      },
+      {
+        "name": "風鈴みみずく",
+        "summary": "可愛いみみずくが枝にてお留守番。付属風鈴「釣鐘」の音色の美しさも人気です。",
+        "url": "http://www.iwachu.info/shop/item/iwachu/picture/goods/82_1.jpg",
+        "category": "南部鉄器",
+        "target": [
+          "woman",
+          "junior",
+	  "summer"
+        ],
+        "price": "2,730"
+      },
+      {
+        "name": "香立折り鶴(敷台付)（グリーン)",
+        "summary": "願いを込めてプレゼントにどうぞ。和の趣。",
+        "url": "http://www.iwachu.info/shop/item/iwachu/picture/goods/56_1.jpg",
+        "category": "南部鉄器",
+        "target": [
+          "adult"
+        ],
+        "price": "2,625"
+      }
+    ]
+  },
+  {
+    "id": "03",
+    "name": "ぴょんぴょん舎冷麺工房",
+    "summary": "イーハトーヴの味。盛岡冷麺。",
+    "open": "09:00~17:00",
+    "address": "岩手県盛岡市繋字尾入野64-119",
+    "phone": "019-691-7611",
+    "url": "http://www.pyonpyonsya.co.jp/tenpo_reimen-koubou.html",
+    "location": [
+      {
+        "lat": "39.692703",
+        "long": "141.024684"
+      }
+    ],
+    "item": [
+      {
+        "name": "盛岡冷麺４食セット",
+        "summary": "お店の味を手軽に味わえるよう、自家製の麺・スープ・キムチ・酢ゴマを化粧箱に詰め合わせた贈答用として人気の商品です。",
+        "url": "https://store.pyonpyonsya.co.jp/prod_images/4%E9%A3%9F%E3%82%AE%E3%83%95%E3%83%88%E3%83%BBweb_wh360_72dpi-120330201137.png",
+        "category": "ギフトセット",
+        "target": [
+          "young",
+          "adult"
+        ],
+        "price": "2,200"
+      },
+      {
+        "name": "盛岡冷麺４食+マッコリセット",
+        "summary": "麺・スープ・キムチ・酢ゴマ・牛味付肉・きゅうりの甘酢漬け・ゆで卵をセットした盛岡冷麺に、発売以来人気のぴょんぴょん舎自家製生マッコリを２本セットしたオリジナルセットです。",
+        "url": "https://store.pyonpyonsya.co.jp/prod_images/%E5%86%B7%E9%BA%BA(SP4%E9%A3%9F)+%EF%BE%8F%EF%BD%AF%EF%BD%BA%EF%BE%982%E6%9C%AC%E7%AE%B1%E3%81%AA%E3%81%97-131123161025.png",
+        "category": "ギフトセット",
+        "target": [
+          "adult",
+          "woman"
+        ],
+        "price": "5,250"
+      }
+    ]
+  },
+  {
+    "id": "04",
+    "name": "老舗白沢せんべい店",
+    "summary": "南部せんべいの老舗。白沢せんべい店。",
+    "open": "09:00~17:00",
+    "address": "岩手県盛岡市紺屋町２－１６",
+    "phone": "019-622-7224",
+    "url": "http://www.okashi-net.com/mall/sirasawa/",
+    "location": [
+      {
+        "lat": "39.702278",
+        "long": "141.156225"
+      }
+    ],
+    "item": [
+      {
+        "name": "南部せんべい",
+        "summary": "原材料を吟味し伝統の味を頑固に守り、手間と時間がかかる手焼きにあえてこだわった南部せんべいです。",
+        "url": "http://www.okashi-net.com/mall/sirasawa/top/nanbusenbei.jpg",
+        "category": "お菓子",
+        "target": [
+          "adult"
+        ],
+        "price": "1,269~"
+      }
+    ]
+  },
+  {
+    "id": "05",
+    "name": "北星館",
+    "summary": "旅情豊かな岩手を語るさまざまなお土産の中でも特にぴょんぴょん舎冷麺と白龍のじゃじゃめんが大好評です。",
+    "open": "10:00~20:30",
+    "address": "岩手県盛岡市盛岡駅前通1-44",
+    "phone": "019-654-7859",
+    "url": "http://www.fesan-jp.com/fesan/floor/popup/odense/hokuseikan.htm",
+    "location": [
+      {
+        "lat": "39.702608",
+        "long": "141.135644"
+      }
+    ],
+    "item": [
+      {
+        "name": "白龍元祖盛岡じゃじゃ麺3食セット",
+        "summary": "盛岡・白龍(パイロン)のじゃじゃ麺です。行列ができる人気店ならではの元祖じゃじゃ麺。盛岡で食べる本物の味をお楽しみください。",
+        "url": "http://www1.enekoshop.jp/shop/kawatoku/home/186/item_img/142213_detailImage1.jpg",
+        "category": "ギフトセット",
+        "target": [
+          "young",
+          "adult"
+        ],
+        "price": "1,269~"
+      },
+      {
+        "name": "盛岡温麺2食セット",
+        "summary": "自家製の生麺・ストレートスープに白菜キムチを手づくりのままセットしました。豚肉・白菜・長葱・人参・乾し椎茸等、お好みの野菜と調理することで盛岡温麺特有の味を楽しむことができます。",
+        "url": "http://www1.enekoshop.jp/shop/kawatoku/home/186/item_img/753233_detailImage1.jpg",
+        "category": "ギフトセット",
+        "target": [
+          "young",
+          "woman",
+          "adult"
+        ],
+        "price": "1,269~"
+      }
+    ]
+  },
+  {
+    "id": "06",
+    "name": "ベアレン醸造所",
+    "summary": "ドイツより移設した醸造設備を利用したヨーロッパの伝統的なクラシックビールを造るブルワリーです。",
+    "open": "09:00~18:00",
+    "address": "岩手県盛岡市北山１丁目３－３１",
+    "phone": "019-606-0766",
+    "url": "http://www.baerenbier.com/index.htm",
+    "location": [
+      {
+        "lat": "39.714238",
+        "long": "141.154522"
+      }
+    ],
+    "item": [
+      {
+        "name": "ベアレンクラシック330ml瓶12本",
+        "summary": "コクと苦味の本格ラガー。最近のビールは軽い、とお嘆きのあなた！きっとご満足いただける深い味わいのビールです。",
+        "url": "http://image.rakuten.co.jp/baeren/cabinet/standard/img59318991.jpg",
+        "category": "お酒",
+        "target": [
+          "adult"
+        ],
+        "price": "4.100"
+      },
+      {
+        "name": "ベアレンシュバルツ330ml瓶12本",
+        "summary": "まろやかな口当たり、すっきりとした喉越しのドイツスタイル黒ビール。黒ビールは苦手という方にも、ぜひお試しいただきたいビールです。",
+        "url": "http://image.rakuten.co.jp/baeren/cabinet/standard/img59318990.jpg",
+        "category": "お酒",
+        "target": [
+          "adult",
+	  "summer"
+        ],
+        "price": "4.100"
+      },
+      {
+        "name": "ベアレンチョコレートスタウト330ml×12本",
+        "summary": "ビターチョコレートのような濃厚なコク深い味わい。大人のための黒ビール 。",
+        "url": "http://image.rakuten.co.jp/baeren/cabinet/chocobeer/ch12item.jpg",
+        "category": "お酒",
+        "target": [
+          "adult",
+	  "winter"
+        ],
+        "price": "4,680"
+      },
+      {
+        "name": "ベアレンマイボック330ml×12本",
+        "summary": "日本で飲める、最高のボック。ドイツの５月ビール。どうぞ、この１杯の満足感を味わってください。",
+        "url": "http://baeren.jp/maibock_2011/s-maibock.jpg",
+        "category": "お酒",
+        "target": [
+          "adult",
+	  "spring"
+        ],
+        "price": "4,680"
+      },
+      {
+        "name": "ベアレンヴァイツェン12本",
+        "summary": "まろやかで、フルーティな味わい。ラベル一新！夏のヴァイツェン発売！",
+        "url": "http://image.rakuten.co.jp/baeren/cabinet/weizen-main.jpg",
+        "category": "お酒",
+        "target": [
+          "adult",
+	  "summer"
+        ],
+        "price": "4,680"
+      },
+      {
+        "name": "ベアレンアップルラガー330ml×12本",
+        "summary": "自然な甘みの本格フルーツビール。",
+        "url": "http://baeren.jp/maibock_2011/s-maibock.jpg",
+        "category": "お酒",
+        "target": [
+          "adult",
+	  "autumn"
+        ],
+        "price": "4,680"
+      },
+      {
+        "name": "ベアレンライ麦ビール330ml×12本",
+        "summary": "あのライ麦ビールが、いよいよ登場。",
+        "url": "http://baeren.jp/maibock_2011/s-maibock.jpg",
+        "category": "お酒",
+        "target": [
+          "adult",
+	  "spring"
+        ],
+        "price": "4,680"
+      },
+      {
+        "name": "ベアレンウィンタービール「ウルズス」330ml×12本",
+        "summary": "雪のようにとける口当たりのよい泡。小麦と酵母のフルーツのような香り。甘みすら感じるコクと濃厚な味わい。アルコール7％の深い飲みごたえ。今だけの特別な味わいです。",
+        "url": "http://baeren.jp/maibock_2011/s-maibock.jpg",
+        "category": "お酒",
+        "target": [
+          "adult",
+	  "winter"
+        ],
+        "price": "6,180"
+      }
+    ]
+  },
+  {
+    "id": "07",
+    "name": "さいとう製菓",
+    "summary": "かもめの玉子のさいとう製菓。",
+    "open": "",
+    "address": "岩手県大船渡市大船渡町富沢41-12",
+    "phone": "0192-27-3135",
+    "url": "http://www.saitoseika.co.jp/",
+    "location": [
+      {
+        "lat": "39.071597",
+        "long": "141.714113"
+      }
+    ],
+    "item": [
+      {
+        "name": "かもめの玉子20個入り",
+        "summary": "「大手亡」「砂糖（白ざらめ）」「小麦粉」「鶏卵」等を永年かけて育んだしっとりとほくほくの黄味餡をホワイトチョコレ－トで包みあげた風味豊かなお菓子です。",
+        "url": "https://xc523.eccart.jp/g852/user/item_img_reg.jpg",
+        "category": "お菓子",
+        "target": [
+          "adult",
+       	  "junior"
+        ],
+        "price": "2205"
+      },
+      {
+        "name": "黄金かもめの玉子9個入り",
+        "summary": "一粒一粒選び抜いた極上の栗を贅沢に丸ごと入れクリーミーな餡で優しく包み込みました。さらに、外側は金箔で装飾をほどこした目にも鮮やかなこだわりの逸品です。",
+        "url": "https://xc523.eccart.jp/g852/user/item_img_ougon.jpg",
+        "category": "お菓子",
+        "target": [
+          "adult",
+       	  "junior"
+        ],
+        "price": "3500"
+      },
+      {
+        "name": "かもめのショコらん6個入り",
+        "summary": "かもめの玉子とショコラの出会い。コロンとチョコに包まれました。やわらかい口当たり。ほろ苦いおいしさ。かもめが生んだショコラの玉子。",
+        "url": "http://xc523.eccart.jp/g852/images/8_l.jpg",
+        "category": "お菓子",
+        "target": [
+          "young",
+       	  "junior",
+          "woman"
+        ],
+        "price": "840"
+      }
+    ]
+  },
+  {
+    "id": "08",
+    "name": "南部せんべいの巖手屋本店",
+    "summary": "南部の風土が生んだ、伝統の『南部せんべい』を岩手県二戸よりお届けします。",
+    "open": "",
+    "address": "岩手県二戸市石切所字前田41-1",
+    "phone": "0195-23-2209",
+    "url": "http://www.iwateya.co.jp/",
+    "location": [
+      {
+        "lat": "40.256317",
+        "long": "141.285533"
+      }
+    ],
+    "item": [
+      {
+        "name": "まめごろう",
+        "summary": "ホクホク甘いクッキー生地に小粒の落花生を丸ごとそのまま加え、香ばしい豆の風味が人気のおせんべいです。紅茶やホットミルク等にもよく合いますので、午後のおやつにもおすすめです。",
+        "url": "http://www.iwateya.co.jp/img/1591.jpg",
+        "category": "お菓子",
+        "target": [
+          "junior",
+          "woman"
+        ],
+        "price": "525"
+      },
+      {
+        "name": "チョコバナナ",
+        "summary": "丸いせんべいを半分に切ったかわいいサイズです。お口にひろがるバナナの風味とチョコレート生地のハーモニー♪",
+        "url": "http://www.iwateya.co.jp/img/banana.jpg",
+        "category": "お菓子",
+        "target": [
+          "junior",
+          "woman"
+        ],
+        "price": "550"
+      }
+    ]
+  },
+  {
+    "id": "09",
+    "name": "松栄堂",
+    "summary": "国産の厳選した素材を使った「田むらの梅」、地域に脈々と流れる餅文化から生まれた「ごま摺り団子」「ゆべし」など、こだわりの菓子作りを通じ、新しい時代の息吹を取り入れ、地域と共に歩んで参ります。",
+    "open": "09:00~18:00",
+    "address": "岩手県一関市地主町3-36",
+    "phone": "0191-23-5008",
+    "url": "http://www.shoeidoh.co.jp/",
+    "location": [
+      {
+        "lat": "38.931999",
+        "long": "141.134266"
+      }
+    ],
+    "item": [
+      {
+        "name": "伝承田むらの梅10個入",
+        "summary": "松栄堂の創業期からつくり継がれる田むらの梅。表面にお砂糖をまぶした昔ながらの味わいです。",
+        "url": "http://img06.shop-pro.jp/PA01177/368/product/44614504_o3.jpg?20131111171421",
+        "category": "お菓子",
+        "target": [
+          "adult"
+        ],
+        "price": "1050"
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "name": "岩谷堂羊羹菊泉堂",
+    "summary": "全国各地の甘党からも引き合いがあり、一棹一棹に心を込めて煉り上げた。「岩谷堂羊羹」を是非、ご賞味ください。",
+    "open": "08:00~19:00",
+    "address": "岩手県奥州市江刺区川原町3-10",
+    "phone": "0197-35-2627",
+    "url": "http://kikusendo.com/",
+    "location": [
+      {
+        "lat": "39.189405",
+        "long": "141.179658"
+      }
+    ],
+    "item": [
+      {
+        "name": "絞り羊羹8個入り",
+        "summary": "一口サイズの可愛い羊羹で切らずにそのまま召し上がれます。人気商品です。",
+        "url": "http://kikusendo.com/gazou/shibori82.jpg",
+        "category": "お菓子",
+        "target": [
+          "adult",
+          "woman"
+        ],
+        "price": "1200"
+      }
+    ]
+  },
+  {
+    "id": "",
+    "name": "",
+    "summary": "",
+    "open": ":~:",
+    "address": "",
+    "phone": "",
+    "url": "",
+    "location": [
+      {
+        "lat": "",
+        "long": ""
+      }
+    ],
+    "item": [
+      {
+        "name": "",
+        "summary": "",
+        "url": "",
+        "category": "",
+        "target": [
+          ""
+        ],
+        "price": ""
+      }
+    ]
+  },
+  {
+    "id": "",
+    "name": "",
+    "summary": "",
+    "open": ":~:",
+    "address": "",
+    "phone": "",
+    "url": "",
+    "location": [
+      {
+        "lat": "",
+        "long": ""
+      }
+    ],
+    "item": [
+      {
+        "name": "",
+        "summary": "",
+        "url": "",
+        "category": "",
+        "target": [
+          ""
+        ],
+        "price": ""
+      }
+    ]
+  }
+]

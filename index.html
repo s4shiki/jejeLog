@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<!--
+Created using jsbin.com
+Source can be edited via http://jsbin.com/Oxapehu/5/edit
+-->
+<head>
+	<meta charset="UTF-8" />
+	<title>イワミン-岩手民芸品アプリ-</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+	<script type="text/javascript" src="map.js"></script>
+	<style id="jsbin-css">
+	.ui-header .ui-title, /* header */
+	.ui-footer .ui-title, /* footer */
+	.ui-btn-inner, /* button */
+	.ui-li-heading, /* listview heading */
+	.ui-li .ui-btn-text a.ui-link-inherit, /* listview link */
+	.ui-li-desc /* listview description */
+	{
+	overflow: visible;
+	white-space: normal;
+	}
+	#map_canvas {
+		position:absolute;
+		width:100%;
+		height:100%;
+	}
+	#map .ui-content {
+	    padding:0;
+	    margin:0;
+	}
+	</style>
+</head>
+<body>
+	<div id="page-menu" data-role="page" data-title="岩手の名産品">
+		<div data-role="header">
+			<h1>いわて-おみやげ探し-トップページ</h1>
+		</div>
+		<div data-role="content">
+			<img src='title.png' width="100%" alt='タイトル' />
+			<ul data-role="listview" data-inset="true" id="menuData">
+				<li menuName="all"><a href="#page-list" >すべての名物を観る</a></li>
+				<li ><a href="map.html?name=all" rel="external">MAPからすべての名物品店を観る</a></li>
+				<!--<li ><a href="map.html?name=near"  rel="external">MAPから近くにある店を探す</a></li>-->
+				<li data-role="list-divider">おすすめ年齢別で探す</li>
+				<li menuName="junior"><a href="#page-list" >子供向け</a></li>
+				<li menuName="young"><a href="#page-list" >若者向け</a></li>
+				<li menuName="woman"><a href="#page-list" >女性向け</a></li>
+				<li menuName="adult"><a href="#page-list" >大人向け</a></li>
+				<li data-role="list-divider">季節で探す</li>
+				<li menuName="spring"><a href="#page-list" >春限定</a></li>
+				<li menuName="summer"><a href="#page-list" >夏限定</a></li>
+				<li menuName="autumn"><a href="#page-list" >秋限定</a></li>
+				<li menuName="winter"><a href="#page-list" >冬限定</a></li>
+			</ul>
+		</div>
+	</div>
+  
+	<div id="page-list" data-role="page" data-title="岩手の名産品">
+		<div data-role="header">
+			<h1>岩手の名産品</h1>
+		</div>
+		<div data-role="content">
+			<ul data-role="listview" data-inset="true" id="listData">
+			</ul>
+		</div>
+	</div>
+	<div id="page-info" data-role="page" data-title="岩手の名産品">
+		<div data-role="header">
+			<h1 id="distTitle">情報が見つかりません</h1>
+		</div>
+		<div data-role="content">
+			<p id="distImg"></p>
+			<ul data-role="listview" id="distUl">
+			</ul>
+		</div>
+	</div>
+	<div data-role="page" id="map">
+		<div data-role="header" data-position="fixed">
+			<h1>MAP</h1>
+		</div>
+		<div data-role="content">
+			<!--<h2>JejeMap</h2>-->
+			<div id="map_canvas">地図を読み込んでいます</div>
+		</div>
+	</div>
+	<script  type="text/javascript">
+	// 監視識別ID
+	var watch_id = 0;
+	// リアルタイム監視を開始
+	//watch_id = window.navigator.geolocation.watchPosition(monitor);
+	<!--
+	function geo_calc(lat, lng, lat2, lng2) {
+		var dlat, dlng, dm;
+		dlat = Math.abs(lat - lat2);
+		dlng = Math.abs(lng - lng2);
+		dm = Math.sqrt(Math.pow(dlat, 2) + Math.pow(dlng, 2)) * 100000;
+		return dm;
+	};
+	//var distance = geo_calc(35.693243,139.749896,35.665124,139.696332);
+	//alert(distance);//6.05
+	
+	//名産品リスト生成
+	$(function() {
+		$(document).on('pageshow', '#page-list', function(e){
+			var ulObj = $("#listData");
+			$('#listData').empty(); // リストビューをクリアする
+			gMenuName = window.localStorage.getItem("menuName");
+			$.getJSON("jeje.json" , function(data) {
+				for (var i in data) {
+					var itemArray = data[i].item;
+					for (var cnt in itemArray) {
+						// 情報の表示
+						var targetArray = itemArray[cnt].target;
+						for (var cntTarget in targetArray) {
+							if (gMenuName === targetArray[cntTarget] || gMenuName ==="all") {
+								console.log(targetArray[cntTarget]);
+								var nesting = $('<a href="#page-info">').
+								append('<img src='+ itemArray[cnt].url + ' width="80px" height="80px">').
+								append('<h2>' + itemArray[cnt].name + '</h2>').
+								append("<p>"+ itemArray[cnt].summary +"</p></a>");
+								ulObj.append($('<li lineName =' + itemArray[cnt].name + '>').append(nesting)).listview('refresh');
+								break;
+							}
+						} 
+						//text(data[i].name));
+					}
+				}
+			});
+		});
+		
+		//商品リスト生成
+		// トップページから画面遷移が起きた時に，要素名を取得する．
+		
+		var gMenuName;
+		$(document).ready(function(e){
+			$('#menuData').on('click', 'li', function(e){
+				console.log('click');
+				gMenuName = $(this).attr("menuName");
+				console.log(gMenuName);
+				window.localStorage.setItem("menuName", gMenuName);
+				//gCurLineIdx = $('#lvTTLineList li').index(this); // これでもOK
+			});
+		});
+		
+		$('#menuData li').on('click', function(){
+			gCurLineIdx = $(this).attr('lineName');
+			console.log(gCurLineIdx);
+			//gCurLineIdx = $('#lvTTLineList li').index(this); // これでもOK
+		});
+	  
+		//商品詳細生成
+		// リストビューから画面遷移が起きた時に，要素名を取得する．
+		var gCurLineIdx;
+		$(document).on('pageshow', '#page-list', function(e){
+			console.log('init');
+			$(this).on('click', '#listData li', function(){
+				gCurLineIdx = $(this).attr('lineName');
+				console.log(gCurLineIdx);
+				window.localStorage.setItem("lineName", gCurLineIdx);
+				
+				//gCurLineIdx = $('#lvTTLineList li').index(this); // これでもOK
+			});
+		});
+	  
+		// リストビューから遷移したときに商品の詳細とお店の情報を表示する
+		$(document).on('pagebeforeshow', '#page-info', function(e){   
+			// jsonから一致する情報を検索して表示
+			$('#distTitle').empty(); 
+			$('#distImg').empty(); 
+			$('#distUl').empty(); // リストビューをクリアする
+			$.getJSON("jeje.json" , function(data) {
+				gCurLineIdx = window.localStorage.getItem("lineName");
+				for (var i in data) {
+					var itemArray = data[i].item;
+					for (var cnt in itemArray) {
+						if (itemArray[cnt].name === gCurLineIdx) {
+							var titleObj = $("#distTitle");
+							titleObj.text(itemArray[cnt].name);
+							var imgObj = $("#distImg");
+							imgObj.append($('<img src='+ itemArray[cnt].url + ' width="100%" alt=' + itemArray[cnt].name +' />'));
+							var ulObj = $("#distUl");
+							//var shopInfo = 
+							ulObj.append($('<li data-role="list-divider">商品情報</li>')).listview('refresh');
+							ulObj.append($('<li>').
+							append("<p class='ui-li-desc'>"+ itemArray[cnt].summary +"</p>").
+							append('<p>価格：' + itemArray[cnt].price + '円</p>')).listview('refresh');
+							//ulObj.append($('<li>価格：' + itemArray[cnt].price + '円</li>')).listview('refresh');
+							ulObj.append($('<li data-role="list-divider">販売先情報</li>')).listview('refresh');
+							ulObj.append($('<li>').
+							append('<h2>' + data[cnt].name + '</h2>').
+							append("<p>"+ data[cnt].summary +"</p>").
+							append("<p>営業時間："+ data[cnt].open +"</p>").
+							append("<p>住所："+ data[cnt].address +"</p>").
+							append("<p>電話番号："+ data[cnt].phone +"</p>")).listview('refresh');
+							ulObj.append($('<li><a href="map.html?name='+ data[cnt].name +'" rel="external">販売先をマップで見る</a></li>')).listview('refresh');
+						}
+					}
+				}
+			});
+		});
+		
+		$(document).on('pageshow','#map', drawMap() );
+	  
+		/*
+		// リアルタイム監視
+		function monitor(event) {
+		// 緯度
+		var latitude = event.coords.latitude;
+		// 経度
+		var longitude = event.coords.longitude
+		}
+		*/
+	});
+	// -->
+	</script>
+	<script>
+
+	</script>
+</body>
+</html>

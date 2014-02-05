@@ -1,0 +1,201 @@
+
+// グローバル変数定義
+var map;
+var urlList = [];
+var mapData;
+
+function drawMap() {
+	console.log("map function load");
+	/**
+	*	addMarker( data )
+	*	google Map上にマーカーを追加する関数
+	*	引数 data:取り決め通りの形式のオブジェクト配列
+	*/
+	function addMarker( data ) {
+		console.log( map );
+		for( var i in data ) {
+			// マーカーの作成
+			var marker = new google.maps.Marker( {
+				position: new google.maps.LatLng( parseFloat( data[ i ].location[0].lat ), parseFloat( data[ i ].location[0].long ) ),
+				map: map,
+				title: data[ i ].name
+			} );
+				
+			// マーカーにイベントを追加する
+			google.maps.event.addListener( marker, "click", onClickMarker );
+		}			
+	}
+		
+	/**
+	*	onClickMarker( event )
+	*	google Map上のマーカーをクリックしたときの処理
+	*	引数 event:google.maps.event.addListenerから呼び出し限定
+	*/
+	function onClickMarker( event ) {
+		// 経度・緯度の誤差を修正 小数第5位を四捨五入
+		var d = Math.round( event.latLng.d * 1000000 ) / 1000000;
+		var e = Math.round( event.latLng.e * 1000000 ) / 1000000;
+			
+		// デバッグ用
+		console.log( "Selected" + d + ", " + e );
+			
+		// 該当する経度・緯度を持つマーカーを探索
+		for( var i in mapData ) {
+			// デバッグ用
+			console.log( "Search" + mapData[ i ].location[ 0 ].lat + ", " + mapData[ i ].location[ 0 ].long );
+			// 緯度・経度一致でbreak
+			if( ( parseFloat( mapData[ i ].location[ 0 ].lat ) == d ) && ( parseFloat( mapData[ i ].location[ 0 ].long ) == e ) ) break;
+		}
+		// マーカーに設定したURLにジャンプ
+		location.href = mapData[ i ].url;
+	}
+		
+	// ページ読み込み完了時のイベント
+	google.maps.event.addDomListener( window, "load", function () {
+			
+		// URLパラメータ取得
+		//var param = getParam();
+		var name="all";
+		console.log( param[ "name" ] );
+			
+		// 位置情報取得オプション
+		var position_options = {
+			enableHighAccuracy: true
+		};
+			
+		// GPS機能による位置取得
+		// navigatorのメソッドは非同期処理の可能性があるため注意
+		navigator.geolocation.getCurrentPosition( successCB, failedCB, position_options );
+			
+		/**
+		*	successCB( position )
+		*	GPSによる位置取得成功時のCallback関数
+		*	引数 position:取得したGPS情報のオブジェクト
+		*/
+		function successCB( position ) {
+			var myLatLng = new google.maps.LatLng( position.coords.latitude, position.coords.longitude );
+			var mapdiv = document.getElementById( "map_canvas" );		// html上のマップを表示する要素
+			var myOptions = {											// マップの設定
+				zoom: 13, 
+				center: myLatLng,
+				mapTypeId: google.maps.MapTypeId.ROADMAP,
+				scaleControl: true,
+			};
+				
+			map = new google.maps.Map( mapdiv, myOptions );	// マップを作成
+			// JSONを読み込む
+			$.getJSON( "jeje.json", function ( data ) {
+				mapData = data;
+				if( param[ "name" ] == "all" ) {
+					
+				} else if( param[ "name" ] == "near" ) {
+					// 現地点から一定距離内で検索して新しいdataを作る
+					var distance = ( param[ "dist" ] != undefined )? parseFloat( param[ "dist" ] ) : 100;
+					var data = searchByDistance( data, position, distance );
+				} else {
+					// 商品名で検索して新しいdataを作る
+					var data = searchByName( data, param[ "name" ] );
+					map.setCenter( new google.maps.LatLng( data[ 0 ].location[ 0 ].lat, data[ 0 ].location[ 0 ].long ) );
+				}
+				addMarker( data );	// マーカーを追加
+			} );
+		}
+			
+		/**
+		*	failedCB()
+		*	GPSによる位置取得失敗時、またはGPS使用不可環境でのコールバック関数
+		*	引数 なし
+		*/			
+		function failedCB() {
+			var mapdiv = document.getElementById( "map_canvas" );
+			var myOptions = {
+				zoom: 13, 
+				center: new google.maps.LatLng( 39.701683, 141.136369 ),	// 大体、盛岡駅あたり
+				mapTypeId: google.maps.MapTypeId.ROADMAP,
+				scaleControl: true,
+			};
+				
+			map = new google.maps.Map( mapdiv, myOptions );
+				
+			$.getJSON( "jeje.json", function ( data ) {
+				mapData = data;
+				addMarker( data );
+			} );
+		}
+			
+	} );
+		
+	/**
+	*	getParam()
+	*	URLからパラメータを取得して連想配列で返す
+	function getParam() {
+		// URLを取得 → 「?」で分割 → 「?」以降の部分をさらに「&」で分割
+		var url 	= location.href;
+		var params1	= url.split( "?" );
+		var params2 = params1[ 1 ].split( "&" );
+			
+		// パラメータ格納用配列
+		var paramArray = [];
+			
+		// 配列にパラメータを格納
+		for( var i = 0; i < params2.length; i++ ) {
+			temp = params2[ i ].split( "=" );
+			paramArray.push( temp[ 0 ] );
+			temp[ 1 ] = temp[ 1 ].replace( /^%22/, "" );	// 「"」を取り除く
+			temp[ 1 ] = temp[ 1 ].replace( /%22$/, "" );	// 「"」を取り除く
+			paramArray[ temp[ 0 ] ] = temp[ 1 ];
+		}
+			
+		return paramArray;
+	}
+	*/
+	/**
+	*	searchByName( data, target )
+	*	json形式のdataの中からtargetに指定した名前を探して抽出する
+	*/
+	function searchByName( data, target ) {
+		var temp = new Array( 3 );
+		var n = 0;
+		target = decodeURI( target );
+		for( var i = 0; i < data.length; i++ ) {
+			if( data[ i ].name == target ) {
+				temp[ n ] = data[ i ];
+				n++;
+				break;
+			}
+		}
+		return temp;
+	}
+		
+	/**
+	*	geo_calc( lat, lng, lat2, lng2 )	
+	*	２点間の距離を測る
+	*	引数 lat, lng：座標1	lat2, lng2：座標2
+	*/
+	function geo_calc(lat, lng, lat2, lng2) {
+		var dlat, dlng, dm;
+		dlat = Math.abs(lat - lat2);
+		dlng = Math.abs(lng - lng2);
+		dm = Math.sqrt(Math.pow(dlat, 2) + Math.pow(dlng, 2)) * 100000;
+		return dm;
+	};
+		
+	/**
+	*	searchByDistance( data, position, distance )
+	*	json形式のdataの中から基準座標から一定範囲内にある場所を探して抽出する
+	*	引数 data:jsonデータ position:基準座標 distance:距離
+	*/
+	function searchByDistance( data, position, distance ) {
+		var temp = new Array( 30 );
+		var n = 0;
+		for( var i = 0; i < data.length; i++ ) {
+			if( geo_calc( position.coords.latitude, position.coords.longitude, 
+				data[ i ].location[ 0 ].lat, data[ i ].location[ 0 ].long ) <= distance ) {
+					temp[ n ] = data[ i ];
+					n++;
+				}
+			}
+			return temp;
+		}
+
+	};
